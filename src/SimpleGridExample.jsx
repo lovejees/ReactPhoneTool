@@ -89,7 +89,6 @@ export default class extends Component {
       }
     }).then((response) => response.json()).then((responseJson) => {
       this.setState({rowData: responseJson.data});
-      console.log(responseJson.data);
     }).catch((error) => {
       console.error(error);
     });
@@ -106,7 +105,6 @@ export default class extends Component {
       body: JSON.stringify(data)
     }).then((response) => response.json()).then((responseJson) => {
       responseJson.data && this.setState({rowData: responseJson.data});
-      console.log(responseJson.data);
     }).catch((error) => {
       console.error(error);
     });
@@ -122,7 +120,6 @@ export default class extends Component {
       }
     }).then((response) => response.json()).then((responseJson) => {
       responseJson.data && this.setState({rowData: responseJson.data});
-      console.log(responseJson.data);
     }).catch((error) => {
       console.error(error);
     });
@@ -130,20 +127,16 @@ export default class extends Component {
 
   updateList() {
     this.postUserList(this.state.rowData);
-    console.log(this.state.rowData);
   }
 
   shortestpath() {
-    console.log(this.state.emp1, this.state.emp2);
     this.getShortestPath(this.state.emp1, this.state.emp2);
   }
 
   setEmp1(e) {
-    console.log(e.target.value);
     this.setState({'emp1': e.target.value});
   };
   setEmp2(e) {
-    console.log(e.target.value);
     this.setState({'emp2': e.target.value});
   };
 
